@@ -1,0 +1,101 @@
+package com.example.web_151courseproject;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.DecimalFormat;
+import java.time.LocalDate;
+
+public class PaymentActivity extends AppCompatActivity {
+
+    public static Activity paymentActivity;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_payment);
+
+        paymentActivity = this;
+
+        final SharedPreferences sharedValues = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences.Editor editor = sharedValues.edit();
+
+        DecimalFormat c = new DecimalFormat("###,##0.00");
+        double total = sharedValues.getFloat("total", 0);
+        double tax = total * 0.07;
+
+        final TextView lblSubtotal = (TextView)findViewById(R.id.lblSubtotal);
+        final TextView lblTax = (TextView)findViewById(R.id.lblTax);
+        final TextView lblTotal = (TextView)findViewById(R.id.lblTotal);
+
+        lblSubtotal.setText("Subtotal: $" + c.format(total));
+        lblTax.setText("Tax: $" + c.format(tax));
+        lblTotal.setText("Total: $" + c.format(total + tax));
+
+        final EditText txtName = (EditText)findViewById(R.id.txtName);
+        final EditText txtCardNum = (EditText)findViewById(R.id.txtCardNum);
+        final Spinner spnMonth = (Spinner)findViewById(R.id.spnMonth);
+        final Spinner spnYear = (Spinner)findViewById(R.id.spnYear);
+        final EditText txtCSV = (EditText)findViewById(R.id.txtCSV);
+        final Button btnSubmit = (Button)findViewById(R.id.btnSubmit);
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = txtName.getText().toString().trim();
+                String cardNum = txtCardNum.getText().toString().trim();
+                int expMonth = Integer.parseInt(spnMonth.getSelectedItem().toString());
+                int curMonth = LocalDate.now().getMonthValue();
+                int expYear = Integer.parseInt(spnYear.getSelectedItem().toString());
+                int curYear = LocalDate.now().getYear();
+                String csv = txtCSV.getText().toString().trim();
+
+                if (name.trim().isEmpty())
+                {
+                    showToast("No name entered.");
+                    return;
+                }
+                if (cardNum.length() < 16)
+                {
+                    showToast("Invalid card number entered. Please enter a full 16 digit card number.");
+                    return;
+                }
+                if (expYear <= curYear && expMonth < curMonth)
+                {
+                    showToast("Card expired. Please enter information for a valid card.");
+                    return;
+                }
+                if (csv.length() < 3)
+                {
+                    showToast("Invalid card CSV entered. Please enter a full 3 digit CSV.");
+                    return;
+                }
+
+                editor.putString("name", name);
+                editor.putString("cardNum", cardNum);
+                editor.commit();
+
+                startActivity(new Intent(PaymentActivity.this, CompleteActivity.class));
+            }
+        });
+
+
+    }
+
+    public void showToast(String msg)
+    {
+        Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT);
+        toast.show();
+    }
+}

@@ -1,0 +1,586 @@
+/* This is the xml for the scrolling container on the same screen as activity_main.xml. */
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/appbar_scrolling_view_behavior"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <EditText
+                android:id="@+id/txtSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="Search"
+                android:inputType="textPersonName"
+                android:paddingTop="30dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem1"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <CheckBox
+                android:id="@+id/chkSelect1"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic1"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/white_shirt" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="White T-Shirt"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$4.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem2"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <CheckBox
+                android:id="@+id/chkSelect2"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic2"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/red_shirt" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Red T-Shirt"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$6.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem3"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <CheckBox
+                android:id="@+id/chkSelect3"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic3"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pink_shirt" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pink T-Shirt"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$9.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem4"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp"
+            android:visibility="visible">
+
+            <CheckBox
+                android:id="@+id/chkSelect4"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic4"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/orange_shirt" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Orange T-Shirt"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$7.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem5"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <CheckBox
+                android:id="@+id/chkSelect5"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic5"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/green_shirt" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Green T-Shirt"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$8.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem6"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <CheckBox
+                android:id="@+id/chkSelect6"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic6"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/blue_jeans" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blue Jeans"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$19.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem7"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <CheckBox
+                android:id="@+id/chkSelect7"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic7"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/red_jeans" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Red Jeans"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$22.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem8"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <CheckBox
+                android:id="@+id/chkSelect8"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic8"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tan_cargos" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tan Cargo Pants"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$27.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem9"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <CheckBox
+                android:id="@+id/chkSelect9"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic9"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/black_cargos" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Black Cargo Pants"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$29.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrlItem0"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="25dp">
+
+            <CheckBox
+                android:id="@+id/chkSelect0"
+                android:layout_width="225dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false" />
+
+            <ImageView
+                android:id="@+id/imgPic0"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/khakis" />
+
+            <LinearLayout
+                android:id="@+id/lnrlItemInfo0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <TextView
+                    android:id="@+id/lblDesc0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Khakis"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/lblPrice0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$24.99"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spnQuantity0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/quantityArray"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

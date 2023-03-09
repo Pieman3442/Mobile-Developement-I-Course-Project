@@ -1,0 +1,303 @@
+package com.example.web_151courseproject;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import android.preference.PreferenceManager;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.web_151courseproject.databinding.ActivityMainBinding;
+
+import java.util.Locale;
+
+public class MainActivity extends AppCompatActivity {
+
+    private ActivityMainBinding binding;
+
+    public static Activity mainActivity;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mainActivity = this;
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        Toolbar toolbar = binding.toolbar;
+        setSupportActionBar(toolbar);
+        CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
+        toolBarLayout.setTitle("Clothing Store");
+
+        FloatingActionButton fab = binding.fab;
+
+        final SharedPreferences sharedValues = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences.Editor editor = sharedValues.edit();
+
+        final EditText txtSearch = (EditText)findViewById(R.id.txtSearch);
+
+        final LinearLayout lnrlItem1 = (LinearLayout)findViewById(R.id.lnrlItem1);
+        final CheckBox chkSelect1 = (CheckBox)findViewById(R.id.chkSelect1);
+        final TextView lblDesc1 = (TextView)findViewById(R.id.lblDesc1);
+        final TextView lblPrice1 = (TextView)findViewById(R.id.lblPrice1);
+        final Spinner spnQuantity1 = (Spinner)findViewById(R.id.spnQuantity1);
+
+        final LinearLayout lnrlItem2 = (LinearLayout)findViewById(R.id.lnrlItem2);
+        final CheckBox chkSelect2 = (CheckBox)findViewById(R.id.chkSelect2);
+        final TextView lblDesc2 = (TextView)findViewById(R.id.lblDesc2);
+        final TextView lblPrice2 = (TextView)findViewById(R.id.lblPrice2);
+        final Spinner spnQuantity2 = (Spinner)findViewById(R.id.spnQuantity2);
+
+        final LinearLayout lnrlItem3 = (LinearLayout)findViewById(R.id.lnrlItem3);
+        final CheckBox chkSelect3 = (CheckBox)findViewById(R.id.chkSelect3);
+        final TextView lblDesc3 = (TextView)findViewById(R.id.lblDesc3);
+        final TextView lblPrice3 = (TextView)findViewById(R.id.lblPrice3);
+        final Spinner spnQuantity3 = (Spinner)findViewById(R.id.spnQuantity3);
+
+        final LinearLayout lnrlItem4 = (LinearLayout)findViewById(R.id.lnrlItem4);
+        final CheckBox chkSelect4 = (CheckBox)findViewById(R.id.chkSelect4);
+        final TextView lblDesc4 = (TextView)findViewById(R.id.lblDesc4);
+        final TextView lblPrice4 = (TextView)findViewById(R.id.lblPrice4);
+        final Spinner spnQuantity4 = (Spinner)findViewById(R.id.spnQuantity4);
+
+        final LinearLayout lnrlItem5 = (LinearLayout)findViewById(R.id.lnrlItem5);
+        final CheckBox chkSelect5 = (CheckBox)findViewById(R.id.chkSelect5);
+        final TextView lblDesc5 = (TextView)findViewById(R.id.lblDesc5);
+        final TextView lblPrice5 = (TextView)findViewById(R.id.lblPrice5);
+        final Spinner spnQuantity5 = (Spinner)findViewById(R.id.spnQuantity5);
+
+        final LinearLayout lnrlItem6 = (LinearLayout)findViewById(R.id.lnrlItem6);
+        final CheckBox chkSelect6 = (CheckBox)findViewById(R.id.chkSelect6);
+        final TextView lblDesc6 = (TextView)findViewById(R.id.lblDesc6);
+        final TextView lblPrice6 = (TextView)findViewById(R.id.lblPrice6);
+        final Spinner spnQuantity6 = (Spinner)findViewById(R.id.spnQuantity6);
+
+        final LinearLayout lnrlItem7 = (LinearLayout)findViewById(R.id.lnrlItem7);
+        final CheckBox chkSelect7 = (CheckBox)findViewById(R.id.chkSelect7);
+        final TextView lblDesc7 = (TextView)findViewById(R.id.lblDesc7);
+        final TextView lblPrice7 = (TextView)findViewById(R.id.lblPrice7);
+        final Spinner spnQuantity7 = (Spinner)findViewById(R.id.spnQuantity7);
+
+        final LinearLayout lnrlItem8 = (LinearLayout)findViewById(R.id.lnrlItem8);
+        final CheckBox chkSelect8 = (CheckBox)findViewById(R.id.chkSelect8);
+        final TextView lblDesc8 = (TextView)findViewById(R.id.lblDesc8);
+        final TextView lblPrice8 = (TextView)findViewById(R.id.lblPrice8);
+        final Spinner spnQuantity8 = (Spinner)findViewById(R.id.spnQuantity8);
+
+        final LinearLayout lnrlItem9 = (LinearLayout)findViewById(R.id.lnrlItem9);
+        final CheckBox chkSelect9 = (CheckBox)findViewById(R.id.chkSelect9);
+        final TextView lblDesc9 = (TextView)findViewById(R.id.lblDesc9);
+        final TextView lblPrice9 = (TextView)findViewById(R.id.lblPrice9);
+        final Spinner spnQuantity9 = (Spinner)findViewById(R.id.spnQuantity9);
+
+        final LinearLayout lnrlItem0 = (LinearLayout)findViewById(R.id.lnrlItem0);
+        final CheckBox chkSelect0 = (CheckBox)findViewById(R.id.chkSelect0);
+        final TextView lblDesc0 = (TextView)findViewById(R.id.lblDesc0);
+        final TextView lblPrice0 = (TextView)findViewById(R.id.lblPrice0);
+        final Spinner spnQuantity0 = (Spinner)findViewById(R.id.spnQuantity0);
+
+        LinearLayout[] itemCards = {lnrlItem1, lnrlItem2, lnrlItem3, lnrlItem4, lnrlItem5,
+                                    lnrlItem6, lnrlItem7, lnrlItem8, lnrlItem9, lnrlItem0};
+        CheckBox[] checks = {chkSelect1, chkSelect2, chkSelect3, chkSelect4, chkSelect5,
+                             chkSelect6, chkSelect7, chkSelect8, chkSelect9, chkSelect0};
+        String[] descrips = {lblDesc1.getText().toString(), lblDesc2.getText().toString(),
+                             lblDesc3.getText().toString(), lblDesc4.getText().toString(), lblDesc5.getText().toString(),
+                             lblDesc6.getText().toString(), lblDesc7.getText().toString(), lblDesc8.getText().toString(),
+                             lblDesc9.getText().toString(), lblDesc0.getText().toString()};
+        double[] prices = {Double.parseDouble(lblPrice1.getText().toString().substring(1)), Double.parseDouble(lblPrice2.getText().toString().substring(1)),
+                           Double.parseDouble(lblPrice3.getText().toString().substring(1)), Double.parseDouble(lblPrice4.getText().toString().substring(1)),
+                           Double.parseDouble(lblPrice5.getText().toString().substring(1)), Double.parseDouble(lblPrice6.getText().toString().substring(1)),
+                           Double.parseDouble(lblPrice7.getText().toString().substring(1)), Double.parseDouble(lblPrice8.getText().toString().substring(1)),
+                           Double.parseDouble(lblPrice9.getText().toString().substring(1)), Double.parseDouble(lblPrice0.getText().toString().substring(1))};
+        Spinner[] quantities = {spnQuantity1, spnQuantity2, spnQuantity3, spnQuantity4, spnQuantity5,
+                                spnQuantity6, spnQuantity7, spnQuantity8, spnQuantity9, spnQuantity0};
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double total = 0;
+
+                for (int i = 0; i < checks.length; i++)
+                {
+                    if (checks[i].isChecked())
+                        total += prices[i] * (quantities[i].getSelectedItemPosition() + 1);
+                }
+
+                if (total > 0)
+                {
+                    editor.putFloat("total", (float) total);
+                    editor.commit();
+
+                    startActivity(new Intent(MainActivity.this, PaymentActivity.class));
+                }
+                else
+                    showToast("No items selected.");
+            }
+        });
+
+        txtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                String search = txtSearch.getText().toString().trim().toLowerCase();
+
+                if (search.equals(""))
+                {
+                    for (int i = 0; i < itemCards.length; i++)
+                    {
+                        itemCards[i].setVisibility(View.VISIBLE);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < itemCards.length; i++)
+                    {
+                        if (descrips[i].toLowerCase().contains(search))
+                            itemCards[i].setVisibility(View.VISIBLE);
+                        else
+                            itemCards[i].setVisibility(View.GONE);
+                    }
+                }
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+        });
+
+        lnrlItem1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect1.isChecked())
+                    chkSelect1.setChecked(false);
+                else
+                    chkSelect1.setChecked(true);
+            }
+        });
+
+        lnrlItem2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect2.isChecked())
+                    chkSelect2.setChecked(false);
+                else
+                    chkSelect2.setChecked(true);
+            }
+        });
+
+        lnrlItem3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect3.isChecked())
+                    chkSelect3.setChecked(false);
+                else
+                    chkSelect3.setChecked(true);
+            }
+        });
+
+        lnrlItem4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect4.isChecked())
+                    chkSelect4.setChecked(false);
+                else
+                    chkSelect4.setChecked(true);
+            }
+        });
+
+        lnrlItem5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect5.isChecked())
+                    chkSelect5.setChecked(false);
+                else
+                    chkSelect5.setChecked(true);
+            }
+        });
+
+        lnrlItem6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect6.isChecked())
+                    chkSelect6.setChecked(false);
+                else
+                    chkSelect6.setChecked(true);
+            }
+        });
+
+        lnrlItem7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect7.isChecked())
+                    chkSelect7.setChecked(false);
+                else
+                    chkSelect7.setChecked(true);
+            }
+        });
+
+        lnrlItem8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect8.isChecked())
+                    chkSelect8.setChecked(false);
+                else
+                    chkSelect8.setChecked(true);
+            }
+        });
+
+        lnrlItem9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect9.isChecked())
+                    chkSelect9.setChecked(false);
+                else
+                    chkSelect9.setChecked(true);
+            }
+        });
+
+        lnrlItem0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chkSelect0.isChecked())
+                    chkSelect0.setChecked(false);
+                else
+                    chkSelect0.setChecked(true);
+            }
+        });
+
+
+    }
+
+    public void showToast(String msg)
+    {
+        Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT);
+        toast.show();
+    }
+}
